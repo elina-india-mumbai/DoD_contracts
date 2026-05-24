@@ -67,11 +67,7 @@ WARFARE_TIER = {
 
 PARENT_AGENCIES = [
     "Department of Defense",
-    "Department of Energy",
-    "Department of Health and Human Services",
-    "National Aeronautics and Space Administration",
-    "National Science Foundation",
-]
+    ]
 
 HIGHER_ED_TYPES = [
     "higher_education",
@@ -113,7 +109,7 @@ def fetch_rsrt_awards(keyword, fy_start, fy_end, agencies, recipient_types, max_
 
     base_filters = {
         "time_period": [{"start_date": fy_start_date, "end_date": fy_end_date}],
-        "award_type_codes": ["02", "03", "04", "05"],  # grants/cooperative agreements
+        "award_type_codes": ["A", "B", "C", "D"],   # contracts (was ["02","03","04","05"])
         "recipient_type_names": recipient_types,
         "description": keyword,
     }
