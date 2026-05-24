@@ -258,7 +258,7 @@ if max_pages * 100 == len(df):
 st.markdown("### 🏛 Top 20 Recipients by Award Amount")
 top_recipients = (df.groupby("Recipient Name")
                   .agg(awards=("Award ID", "count"),
-                       total=("Award Amount", "sum"),
+                       total=("Total Obligated Amount", "sum"),
                        obligated=("Total Obligated Amount", "sum"))
                   .sort_values("total", ascending=False)
                   .head(20))
@@ -271,7 +271,7 @@ st.dataframe(top_recipients, use_container_width=True)
 st.markdown("### 🏢 By Awarding Agency")
 by_agency = (df.groupby("Awarding Agency")
              .agg(awards=("Award ID", "count"),
-                  total=("Award Amount", "sum"))
+                  total=("Total Obligated Amount", "sum"))
              .sort_values("total", ascending=False))
 by_agency["total"] = (by_agency["total"] / 1e6).round(2)
 by_agency.columns = ["Awards", "Total ($M)"]
@@ -281,7 +281,7 @@ st.dataframe(by_agency, use_container_width=True)
 st.markdown("### 🏛 By Awarding Sub-Agency (top 15)")
 by_sub = (df.groupby("Awarding Sub Agency")
           .agg(awards=("Award ID", "count"),
-               total=("Award Amount", "sum"))
+               total=("Total Obligated Amount", "sum"))
           .sort_values("total", ascending=False)
           .head(15))
 by_sub["total"] = (by_sub["total"] / 1e6).round(2)
