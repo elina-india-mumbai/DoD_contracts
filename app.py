@@ -150,7 +150,7 @@ def fetch_rsrt_awards(keyword, fy_start, fy_end, agencies, recipient_types, max_
 # UI
 # ════════════════════════════════════════════════════════════════════
 
-st.title("🎯 RSRT Validator — Live USAspending Lookup")
+st.title("🎯 DoD_Contracts_RSRT Validator — Live USAspending Lookup")
 st.caption(
     "For each Research Security–Relevant Technology area, queries USAspending's "
     "award-description full-text search using a single canonical term. "
