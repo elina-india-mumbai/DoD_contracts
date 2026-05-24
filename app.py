@@ -21,7 +21,7 @@ from io import StringIO
 # ════════════════════════════════════════════════════════════════════
 
 st.set_page_config(
-    page_title="RSRT Validator",
+    page_title="DoD_contract_RSRT Validator",
     page_icon="🎯",
     layout="wide",
 )
